@@ -709,7 +709,7 @@ class _QuizState extends State<quiz> {
                       style: ElevatedButton.styleFrom(
                         minimumSize: Size(double.infinity, 48),
                         // Définir la couleur de fond du bouton
-                        primary: Colors.red, // Changez la couleur ici selon vos besoins
+                       backgroundColor: Colors.red, // Changez la couleur ici selon vos besoins
                       ), onPressed: () {  },
                       child: Text('إتصل', style: TextStyle(fontSize: 29.0),),
                     ),

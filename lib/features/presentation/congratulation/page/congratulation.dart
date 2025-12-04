@@ -43,8 +43,8 @@ class CongratulationsPage extends StatelessWidget {
                 },
                 child: Text('Go Back'),
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.red, // Background color
-                  onPrimary: Colors.white, // Text color
+                 backgroundColor: Colors.red, // Background color
+                  foregroundColor: Colors.white, // Text color
                   padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                   textStyle: TextStyle(
                     fontSize: 18,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project1/features/presentation/Le%C3%A7on1intem1/page/Le%C3%A7on1item1.dart';
+import 'package:project1/features/presentation/Le%C3%A7on1intem1/page/Le%C3%A7on1_item1.dart';
 
 class DetailItem1 extends StatefulWidget {
   const DetailItem1({Key? key}) : super(key: key);

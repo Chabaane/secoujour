@@ -4,7 +4,10 @@ import 'dart:async';
 import '../../lecon1chap/page/lecon1chap.dart';
 
 class ImageAnimationDemo extends StatefulWidget {
+  const ImageAnimationDemo({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _ImageAnimationDemoState createState() => _ImageAnimationDemoState();
 }
 
@@ -70,7 +73,7 @@ class _ImageAnimationDemoState extends State<ImageAnimationDemo> with SingleTick
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   minimumSize: Size(double.infinity, 48),
-                  primary: Colors.red, // Couleur de fond du bouton
+                 backgroundColor: Colors.red, // Couleur de fond du bouton
                 ),
                 onPressed: () {
                   Navigator.push(

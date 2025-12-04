@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class aideWidget extends StatefulWidget {
   const aideWidget({super.key});
 
@@ -19,7 +20,7 @@ class _QuizState extends State<aideWidget> {
 
   Future<void> _loadQuizState() async {
     // Simuler un chargement asynchrone avec un délai de 2 secondes
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(const Duration(seconds: 2));
   }
 
 
@@ -42,7 +43,7 @@ class _QuizState extends State<aideWidget> {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             // Afficher un préchargeur pendant le chargement
-            return Center(
+            return const Center(
               child: CircularProgressIndicator(),
             );
           } else {
@@ -67,8 +68,8 @@ class _QuizState extends State<aideWidget> {
         children: [
           Container(
             height: 100.0,
-            padding: EdgeInsets.only(right: 6.0, top: 28.0),
-            color: Color(0XFFE3E1D2), // Remplacez cette couleur par celle que vous souhaitez
+            padding: const EdgeInsets.only(right: 6.0, top: 28.0),
+            color: const Color(0XFFE3E1D2), // Remplacez cette couleur par celle que vous souhaitez
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -96,7 +97,7 @@ class _QuizState extends State<aideWidget> {
                       Expanded(
                         child: Container(
                           padding: EdgeInsets.only(right: 80.0,left: 20), // Espace à droite
-                          child: Text(
+                          child: const Text(
                             " تقديم المساعدة في حالات الطوارئ",
                             textAlign: TextAlign.right,
                             style: TextStyle(fontSize: 20),
@@ -110,8 +111,8 @@ class _QuizState extends State<aideWidget> {
                     children: [
                       Expanded(
                         child: Container(
-                          padding: EdgeInsets.only(right: 30.0,top: 15), // Espace à droite
-                          child: Text(
+                          padding: const EdgeInsets.only(right: 30.0,top: 15), // Espace à droite
+                          child: const Text(
                             "الإختناق لدى الطفل",
                             textAlign: TextAlign.right,style: TextStyle(fontSize: 20),
                           ),
@@ -167,7 +168,7 @@ class _QuizState extends State<aideWidget> {
                       style: ElevatedButton.styleFrom(
                         minimumSize: Size(double.infinity, 48),
                         // Définir la couleur de fond du bouton
-                        primary: Colors.red, // Changez la couleur ici selon vos besoins
+                       backgroundColor: Colors.red, // Changez la couleur ici selon vos besoins
                       ), onPressed: () {  },
                       child: Text('إتصل', style: TextStyle(fontSize: 29.0),),
                     ),

@@ -28,12 +28,18 @@ class _State extends State<item1> {
   @override
   Widget build(BuildContext context) {
     final titles = [
-      S.of(context).SecuriteAquatique, S.of(context).RoadSafety,
-      S.of(context).CriseAasthme, S.of(context).CriseEpilepsie, S.of(context).CircularDistress
+      S.of(context).SecuriteAquatique,
+      S.of(context).RoadSafety,
+      S.of(context).CriseAasthme,
+      S.of(context).CriseEpilepsie,
+      S.of(context).CircularDistress
     ];
     final titles2 = [
-      S.of(context).Heatwave, S.of(context).RoadSafety,
-      S.of(context).CriseAasthme,  S.of(context).CriseEpilepsie, S.of(context).CircularDistress
+      S.of(context).Heatwave,
+      S.of(context).RoadSafety,
+      S.of(context).CriseAasthme,
+      S.of(context).CriseEpilepsie,
+      S.of(context).CircularDistress
     ];
 
     final icons = [
@@ -47,7 +53,11 @@ class _State extends State<item1> {
     ];
 
     return Scaffold(
-backgroundColor: Color(0XFFE3E1D2),
+      appBar: AppBar(
+        automaticallyImplyLeading: true, // ← important !
+        title: Text(" Safety and Preparedness "),
+      ),
+      backgroundColor: Color(0XFFE3E1D2),
       body: FutureBuilder<void>(
         future: _loadDetails,
         builder: (context, snapshot) {
@@ -94,13 +104,15 @@ backgroundColor: Color(0XFFE3E1D2),
                           SizedBox(height: 10),
                           Center(
                             child: LinearProgressIndicator(
-                              value: 0.0, // La valeur de progression, entre 0 et 1
+                              value:
+                                  0.0, // La valeur de progression, entre 0 et 1
                               backgroundColor: Colors.grey,
-                              valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                              valueColor:
+                                  AlwaysStoppedAnimation<Color>(Colors.blue),
                             ),
                           ),
                           SizedBox(height: 10),
-                          Center(child: Text(" 6/0 "+S.of(context).Complet)),
+                          Center(child: Text(" 6/0 " + S.of(context).Complet)),
                         ],
                       ),
                     ),
@@ -109,20 +121,21 @@ backgroundColor: Color(0XFFE3E1D2),
                 Container(
                   color: Color(0XFFE3E1D2),
                   alignment: Alignment.centerLeft,
-                  padding: EdgeInsets.only(left: 8.0,top: 8.0,bottom: 0.0),
+                  padding: EdgeInsets.only(left: 8.0, top: 8.0, bottom: 0.0),
                   child: Text(
                     S.of(context).safety,
                     style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black
-                    ),
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
                   ),
                 ),
                 Expanded(
-                  child: Container( // Utilisation d'un Container pour définir le background
+                  child: Container(
+                    // Utilisation d'un Container pour définir le background
                     decoration: BoxDecoration(
-          color: Color(0XFFE3E1D2), // Couleur de fond que vous souhaitez
+                      color: Color(
+                          0XFFE3E1D2), // Couleur de fond que vous souhaitez
                     ),
                     child: ListView.builder(
                       itemCount: titles.length,
@@ -133,26 +146,35 @@ backgroundColor: Color(0XFFE3E1D2),
                             onTap: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => DetailItem1()),
+                                MaterialPageRoute(
+                                    builder: (context) => DetailItem1()),
                               );
                             },
                             child: Column(
                               children: [
                                 ListTile(
                                   leading: _buildIcon(icons[index]),
-                                  title: Text(titles[index],style: TextStyle(color: Colors.black),),
+                                  title: Text(
+                                    titles[index],
+                                    style: TextStyle(color: Colors.black),
+                                  ),
                                   trailing: Icon(Icons.keyboard_arrow_right),
                                 ),
                                 Row(
                                   children: [
                                     Expanded(
                                       child: LinearProgressIndicator(
-                                        value: 0.5, // Changez la valeur de progression selon vos besoins
+                                        value:
+                                            0.5, // Changez la valeur de progression selon vos besoins
                                         backgroundColor: Colors.grey,
-                                        valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                                Colors.blue),
                                       ),
                                     ),
-                                    SizedBox(width: 10), // Espacement entre la barre de progression et le texte
+                                    SizedBox(
+                                        width:
+                                            10), // Espacement entre la barre de progression et le texte
                                     Text(
                                       "50%", // Texte à afficher à droite de la barre de progression
                                       style: TextStyle(
@@ -177,15 +199,15 @@ backgroundColor: Color(0XFFE3E1D2),
                   child: Text(
                     S.of(context).Preparedness,
                     style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black
-                    ),
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
                   ),
                 ),
                 Expanded(
                   child: Container(
-          color: Color(0XFFE3E1D2),  // Couleur de fond que vous souhaitez définir
+                    color: Color(
+                        0XFFE3E1D2), // Couleur de fond que vous souhaitez définir
                     child: ListView.builder(
                       itemCount: titles.length,
                       itemBuilder: (context, index) {
@@ -195,7 +217,8 @@ backgroundColor: Color(0XFFE3E1D2),
                             onTap: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => DetailItem1()),
+                                MaterialPageRoute(
+                                    builder: (context) => DetailItem1()),
                               );
                             },
                             child: Column(
@@ -209,12 +232,17 @@ backgroundColor: Color(0XFFE3E1D2),
                                   children: [
                                     Expanded(
                                       child: LinearProgressIndicator(
-                                        value: 0.5, // Changez la valeur de progression selon vos besoins
+                                        value:
+                                            0.5, // Changez la valeur de progression selon vos besoins
                                         backgroundColor: Colors.grey,
-                                        valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                                        valueColor:
+                                            AlwaysStoppedAnimation<Color>(
+                                                Colors.blue),
                                       ),
                                     ),
-                                    SizedBox(width: 10), // Espacement entre la barre de progression et le texte
+                                    SizedBox(
+                                        width:
+                                            10), // Espacement entre la barre de progression et le texte
                                     Text(
                                       "50%", // Texte à afficher à droite de la barre de progression
                                       style: TextStyle(
@@ -251,7 +279,7 @@ backgroundColor: Color(0XFFE3E1D2),
   }
 }
 
-  class MyIcons {
+class MyIcons {
   static const String allergieIcon = 'assets/icon/Allergieicon.png';
   static const String brulure = 'assets/icon/brulure.png';
   static const String chaleur = 'assets/icon/chaleur.png';
@@ -259,4 +287,4 @@ backgroundColor: Color(0XFFE3E1D2),
   static const String criseEpilepsie = 'assets/icon/criseEpilepsie.png';
   static const String detresse = 'assets/icon/detresse2.png';
   static const String accident = 'assets/icon/accident2.png';
-  }
+}

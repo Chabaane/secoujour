@@ -38,7 +38,8 @@ class _CalendarPageState extends State<CalendarPage> {
             ),
           ),
           SizedBox(height: 20.0),
-          Text('Events', style: Theme.of(context).textTheme.headline6),
+          Text('Events', style: Theme.of(context).textTheme.titleLarge
+),
           Expanded(
             child: ListView.builder(
               itemCount: _appointments.length,

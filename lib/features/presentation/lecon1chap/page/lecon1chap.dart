@@ -4,7 +4,10 @@ import 'package:carousel_slider/carousel_slider.dart';
 import '../../congratulation/page/congratulation.dart';
 
 class CarouselSliderExample extends StatefulWidget {
+  const CarouselSliderExample({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _CarouselSliderExampleState createState() => _CarouselSliderExampleState();
 }
 
@@ -72,7 +75,7 @@ class _CarouselSliderExampleState extends State<CarouselSliderExample> {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.red, // Changer la couleur du bouton en rouge, vous pouvez utiliser n'importe quelle couleur
+                       backgroundColor: Colors.red, // Changer la couleur du bouton en rouge, vous pouvez utiliser n'importe quelle couleur
                       ),
                       child: Text('انتهى'),
                     ),

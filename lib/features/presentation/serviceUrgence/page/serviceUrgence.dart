@@ -3,7 +3,7 @@ import 'package:project1/features/presentation/quize/page/page.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../generated/l10n.dart';
-import '../../aide/page/aideWidget.dart';
+import '../../aide/page/aide_widget.dart';
 import '../../detail/page/detail.dart';
 class ServiceUrgence extends StatefulWidget {
   const ServiceUrgence({super.key});

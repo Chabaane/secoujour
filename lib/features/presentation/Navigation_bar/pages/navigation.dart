@@ -26,30 +26,39 @@ class NavigationWidget extends StatefulWidget {
   NavigationWidget({required this.changeLanguage});
 
   @override
+  // ignore: library_private_types_in_public_api
   _NavigationWidgetState createState() => _NavigationWidgetState();
 }
 
 class _NavigationWidgetState extends State<NavigationWidget> {
   final nav=Home();
 
-  final ThemeData       theme= ThemeData(
-    useMaterial3: true,
+ final ThemeData theme = ThemeData(
+  useMaterial3: true,
+  brightness: Brightness.dark,
+  colorScheme: const ColorScheme(
     brightness: Brightness.dark,
-    colorScheme: ColorScheme(
-      // Définir les autres couleurs du schéma si nécessaire
-        background: Color(0XFFE3E1D2), // Couleur de fond personnalisée
-        primary: Colors.red, // Couleur primaire
-        onPrimary: Colors.red, // Couleur pour le texte sur la couleur primaire
-        secondary: Colors.red, // Couleur secondaire
-        surface: Colors.red, // Couleur de surface
-        onSurface: Colors.red, // Couleur pour le texte sur la surface
-        error: Colors.red, // Couleur d'erreur
-        onError: Colors.red, brightness: Brightness.dark, onSecondary: Colors.red, onBackground: Colors.red // Variante de couleur secondaire
-    ),
-  );
+
+    // OBLIGATOIRES
+    primary: Colors.red,
+    onPrimary: Colors.white,
+
+    secondary: Colors.red,
+    onSecondary: Colors.white,
+
+    background: Color(0xFFE3E1D2),
+    onBackground: Colors.black,
+
+    surface: Colors.red,
+    onSurface: Colors.white,
+
+    error: Colors.red,
+    onError: Colors.white,
+  ),
+);
 
   int _selectedIndex = 0;
-  Locale _selectedLocale = Locale('en', 'US'); // Language initiale en anglais
+  Locale _selectedLocale = const Locale('en', 'US'); // Language initiale en anglais
   static List<Widget> _widgetOptions(BuildContext context) => [
     SingleChildScrollView (
       child: Container(
@@ -61,7 +70,7 @@ class _NavigationWidgetState extends State<NavigationWidget> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                  // Couleur de fond du conteneur
               ),
               padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
@@ -586,7 +595,7 @@ class _NavigationWidgetState extends State<NavigationWidget> {
           ),
         ),
         body: Container(
-          color: this.theme.backgroundColor, // Couleur de fond du corps
+          color: this.theme.colorScheme.background, // Couleur de fond du corps
           child: Center(
             child: _widgetOptions(context).elementAt(_selectedIndex),
           ),
